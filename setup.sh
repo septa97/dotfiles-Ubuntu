@@ -29,3 +29,30 @@ sudo apt install default-jdk
 # Tkinter
 sudo apt install python-tk
 sudo apt install python3-tk
+
+# Docker CE
+sudo apt update
+sudo apt install apt-transport-https
+sudo apt install ca-certificates
+sudo apt install curl
+sudo apt install software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt update
+sudo apt install docker-ce
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
+# Re-login
+
+# MySQL
+sudo apt update
+sudo apt install mysql-server
+mysql_secure_installation
